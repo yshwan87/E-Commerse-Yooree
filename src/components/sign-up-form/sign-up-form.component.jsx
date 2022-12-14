@@ -1,5 +1,5 @@
-import { useState } from 'react';
-
+import { useState, useContext } from 'react';
+import { UserContext } from "../../assets/user.context";
 import FormInput from '../form-input/form-input.component';
 import Button from '../button/button.component';
 
@@ -21,6 +21,8 @@ const SignUpForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { displayName, email, password, confirmPassword } = formFields;
 
+  const { setCurrentUser } = useContext(UserContext);
+
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
@@ -38,6 +40,8 @@ const SignUpForm = () => {
         email,
         password
       );
+
+      setCurrentUser(user);
 
       await createUserDocumentFromAuth(user, { displayName });
       resetFormFields();
