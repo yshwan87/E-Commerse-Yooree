@@ -1,6 +1,5 @@
 import { Outlet, Link } from "react-router-dom";
 import { Fragment, useContext } from "react";
-import { ReactComponent as Logo } from "../../assets/beyooreeful_logo.svg";
 import { UserContext } from "../../assets/user.context";
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 import "./navigation.styles.scss";
@@ -16,7 +15,7 @@ const Navigation = () => {
     <Fragment>
       <div className="navigation">
         <Link className="logo-container" to="/">
-          <Logo className="logo" />
+          {/* <Logo className="logo" /> */}
         </Link>
         <div className="nav-links-container">
           <Link className="nav-link" to="/shop">

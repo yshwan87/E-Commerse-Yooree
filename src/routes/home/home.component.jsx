@@ -3,6 +3,9 @@ import Cake from "../../assets/cakeFINAL.jpg";
 import Flower from "../../assets/flower.jpg";
 import Platter from "../../assets/platter.jpg";
 import "./home.styles.scss";
+import HeroSection from "../../components/heroSection/heroSection";
+import Footer from "../../components/footer/footer";
+import Catergory2 from "../../components/category-item/catergory2";
 
 const Home = () => {
   const categories = [
@@ -26,7 +29,14 @@ const Home = () => {
     },
   ];
 
-  return <Directory categories={categories} />;
+  return (
+    <>
+      <HeroSection />
+      <Catergory2/>
+      <Directory categories={categories} />
+      <Footer />
+    </>
+  );
 };
 
 export default Home;

@@ -1,17 +1,21 @@
-import { Routes, Route} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./routes/home/home.component";
-import Navigation from "./routes/navigation/navigation.component";
+// import Navigation from "./routes/navigation/navigation.component";
 import Authentication from "./routes/authentication/authentication.component";
+import Navbar from "./components/navbar/navbar";
+import Shop from "./routes/shop.component/shop.component";
 
 const App = () => {
   return (
-    <Routes>
-      <Route path="/" element={<Navigation />}>
-        <Route index element={<Home />} />
-        {/* <Route path = 'shop' index element={<SignIn />} /> */}
-        <Route path = '/auth' element={<Authentication />} />
-      </Route>
-    </Routes>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" exact element={<Home />} />
+        <Route path="/shop" element={<Shop />} />
+        {/* <Route path="/products" element={Products} /> */}
+        <Route path="/auth" element={<Authentication />} />
+      </Routes>
+    </>
   );
 };
 
