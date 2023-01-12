@@ -28,23 +28,39 @@ const Catergory2 = () => {
   ];
 
   return (
-    <div className="categories-container mx-3 py-3">
-      <div className="container">
-        <div className="title-container">
-          <h2>Categories</h2>
+    <div id="category-container">
+      <div className="category">
+        <div className="category-img">
+          <img src={Cake} alt="Category 1" />
         </div>
-        <div className="categories">
-          {categories.map(({ image, title, description }, index) => {
-            return (
-              <div className="category" key={index}>
-                <img src={image} alt="Category" />
-                <h4>{title}</h4>
-                <p>{description}</p>
-              </div>
-            );
-          })}
+        <div className="category-info">
+          <h3>Category 1</h3>
+          <p>Description for category 1</p>
+          <button>
+            <a href="category-1-page.html">Learn More</a>
+          </button>
         </div>
-        <button className="btn">Show All</button>
+      </div>
+      <div className="category">
+        <div className="category-info-2 order-0 order-md-1">
+          <h3>Category 2</h3>
+          <p>Description for category 2</p>
+          <button>
+            <a href="category-2-page.html">Learn More</a>
+          </button>
+        </div>
+
+        <img src={Flower} alt="Category 2" />
+      </div>
+      <div className="category">
+        <img src={Platter} alt="Category 3" />
+        <div className="category-info">
+          <h3>Category 3</h3>
+          <p>Description for category 3</p>
+          <button>
+            <a href="category-3-page.html">Learn More</a>
+          </button>
+        </div>
       </div>
     </div>
   );

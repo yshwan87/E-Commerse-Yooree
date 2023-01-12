@@ -6,6 +6,8 @@ import "./home.styles.scss";
 import HeroSection from "../../components/heroSection/heroSection";
 import Footer from "../../components/footer/footer";
 import Catergory2 from "../../components/category-item/catergory2";
+import InfoSection from "../../components/category-item/InfoSection";
+import { CakeData, FlowerData, PlatterData } from "../../data/InfoData";
 
 const Home = () => {
   const categories = [
@@ -32,7 +34,10 @@ const Home = () => {
   return (
     <>
       <HeroSection />
-      <Catergory2/>
+      {/* <Catergory2/> */}
+      <InfoSection {...CakeData}/>
+      <InfoSection {...FlowerData}/>
+      <InfoSection {...PlatterData}/>
       <Directory categories={categories} />
       <Footer />
     </>
